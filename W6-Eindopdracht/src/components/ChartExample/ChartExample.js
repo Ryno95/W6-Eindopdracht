@@ -995,4 +995,4 @@ const chartExample = () => (
     </VictoryChart>
   </>
 );
-export default chartExample;
+// export default chartExample;
