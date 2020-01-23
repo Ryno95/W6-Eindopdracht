@@ -45,16 +45,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// 	{/* /* <div className="App" style={{ width: '100%' }}>
-// 		<h1 style={{ textAlign: 'center', color: '#221D23', backgroundColor: 'lightblue' }}>
-// 			Student Dashboard
-// 		</h1>
-// 		<div>
-// 			<AllStudentsGraph data={this.state.dataList} />
-// 		</div>
-// 		<div>
-// 			<EvelynGraph data={this.state.dataList} />
-// 		</div>
-// 	</div>
-// </div> */ */}
