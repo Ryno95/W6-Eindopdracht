@@ -2,12 +2,12 @@ import React from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryGroup } from 'victory';
 
 const HectorGraph = (props) => {
-	console.log('props.data', props.data);
+	// console.log('props.data', props.data);
 
 	const HectorProjects = props.data.filter((obj) => {
 		return obj.name === 'Hector';
 	});
-	console.log(HectorProjects);
+	// console.log(HectorProjects);
 
 	return (
 		<div>

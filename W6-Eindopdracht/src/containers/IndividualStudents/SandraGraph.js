@@ -2,12 +2,12 @@ import React from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryGroup } from 'victory';
 
 const SandraGraph = (props) => {
-	console.log('props.data', props.data);
+	// console.log('props.data', props.data);
 
 	const SandraProjects = props.data.filter((obj) => {
 		return obj.name === 'Sandra';
 	});
-	console.log(SandraProjects);
+	// console.log(SandraProjects);
 
 	return (
 		<div>

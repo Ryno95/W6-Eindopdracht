@@ -29,7 +29,6 @@ class App extends React.Component {
 					</ul>
 
 					<hr />
-
 					<Switch>
 						<Route exact path="/">
 							<AllStudentsGraph data={this.state.dataList} />

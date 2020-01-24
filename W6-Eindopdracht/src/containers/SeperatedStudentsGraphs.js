@@ -1,5 +1,4 @@
 import React from 'react';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryGroup } from 'victory';
 import ArankaGraph from './IndividualStudents/ArankaGraph.js';
 import EvelynGraph from './IndividualStudents/EvelynGraph.js';
 import FlorisGraph from './IndividualStudents/FlorisGraph.js';
@@ -9,43 +8,63 @@ import MauritsGraph from './IndividualStudents/MauritsGraph.js';
 import RahimaGraph from './IndividualStudents/RahimaGraph.js';
 import SandraGraph from './IndividualStudents/SandraGraph.js';
 import StormGraph from './IndividualStudents/StormGraph.js';
-// import WietskeGraph from './IndividualStudents/WietkseGraph.js';
+import WietskeGraph from './IndividualStudents/WietskeGraph.js';
 import Data from '../components/Data/Data';
+
 class SeperatedStudentsGraphs extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			dataList: Data
 		};
+		//array aan state +, waardes van welke graphs getoond moeten worden,
+		// in handleCheckBoxChange pas de state aan door die juiste name in de state te maken
+		this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this);
 	}
 
+	handleCheckBoxChange = (e) => {
+		console.log('checkbox Change', e.target);
+		return e;
+	};
+
 	render() {
+		const StudentNames = this.state.dataList.map((item) => item.name); //to only get the names of the students
+		// console.log('StudentNames', StudentNames);
+
+		const uniqueStudentNames = StudentNames.filter((name, index, names) => {
+			// Om dubbele namen er uit te filteren
+			return names.indexOf(name) === index;
+		});
+		// console.log(uniqueStudentNames);
+
+		const checkBoxes = uniqueStudentNames.map((student) => {
+			return (
+				<label>
+					<input type="checkbox" name={student} onChange={this.handleCheckBoxChange.bind(this)} />
+					{student}
+				</label>
+			);
+		});
+
 		return (
 			<div>
-				<h2>Aranka</h2>
+				<div style={{ textAlign: 'center' }}>
+					Choose Student to view:
+					{checkBoxes}
+				</div>
 				<ArankaGraph data={this.state.dataList} />
-				<h2>Evelyn</h2>
 				<EvelynGraph data={this.state.dataList} />
-				<h2>Floris</h2>
 				<FlorisGraph data={this.state.dataList} />
-				<h2>Hector</h2>
 				<HectorGraph data={this.state.dataList} />
-				<h2>Martina</h2>
 				<MartinaGraph data={this.state.dataList} />
-				<h2>Maurits</h2>
 				<MauritsGraph data={this.state.dataList} />
-				<h2>Rahima</h2>
 				<RahimaGraph data={this.state.dataList} />
-				<h2>Sandra</h2>
 				<SandraGraph data={this.state.dataList} />
-				<h2>Storm</h2>
 				<StormGraph data={this.state.dataList} />
+				<WietskeGraph data={this.state.dataList} />
 			</div>
 		);
 	}
 }
 
 export default SeperatedStudentsGraphs;
-
-// {/* <h2>Wietkse</h2>
-// <WietskeGraph /> */}

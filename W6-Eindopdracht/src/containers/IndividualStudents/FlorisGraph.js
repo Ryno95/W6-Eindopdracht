@@ -2,12 +2,12 @@ import React from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryGroup } from 'victory';
 
 const FlorisGraph = (props) => {
-	console.log('props.data', props.data);
+	// console.log('props.data', props.data);
 
 	const FlorisProjects = props.data.filter((obj) => {
 		return obj.name === 'Floris';
 	});
-	console.log(FlorisProjects);
+	// console.log(FlorisProjects);
 
 	return (
 		<div>

@@ -2,12 +2,12 @@ import React from 'react';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryGroup } from 'victory';
 
 const WietskeGraph = (props) => {
-	console.log('props.data', props.data);
+	// console.log('props.data', props.data);
 
 	const WietskeProjects = props.data.filter((obj) => {
 		return obj.name === 'Wietske';
 	});
-	console.log(WietskeProjects);
+	// console.log(WietskeProjects);
 
 	return (
 		<div>
